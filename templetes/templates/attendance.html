@@ -41,33 +41,33 @@
   </html>
 
   <body>
-    <!-- メニューボタン -->
+  
     <h1></h1><button id="menuButton">メニュー</button></h1>
     
-
-    <!-- ボタンをクリックしたときの処理 -->
     <script>
       document.getElementById("menuButton").addEventListener("click", function() {
-        // ページ内の特定のセクションへスクロールする
+  
         window.location.hash = "###"; // この場合＃＃＃に転移
       });
     </script>
 
   </body>
 
+  <body>
     <!-- ログアウトボタン -->
-    <body>
-    <h1><button id="logoutButton">ログアウト</button></h1>
-  
-    <script>
-    document.getElementById("logoutButton").addEventListener("click", function() {
-    
-      window.location.href = "http://127.0.0.1:8888"; // ログイン画面のURLにリダイレクト
-    });
-    </script>
+    <button id="logoutBtn">ログアウト</button>
 
-  </body>
-  </html>
+    <script>
+        // ログアウトボタンがクリックされたときの処理
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+
+          sessionStorage.clear();
+            // ログイン画面に転移（再度ログインが必要となる）
+            window.location.href = 'login.html'; // ログイン画面のURLに適切なものを指定してください
+        });
+    </script>
+</body>
+</html>
 
   <style>
     /* CSSスタイルを記述 */
