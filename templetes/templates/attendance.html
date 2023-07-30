@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>出勤登録</title>
+  <title>出退勤登録</title>
 </head>
 <body>
-  <h1>出勤登録</h1>
   <p>{{ username }}さん、おはようございます。</p>
   <!-- 勤怠入力フォームやその他のコンテンツを追加 -->
-  <script>
-    function registerAttendance() {
-      var currentTime = new Date();
-      var timeString = currentTime.toLocaleTimeString();
-      
-      var attendanceStatus = document.getElementById("attendanceStatus");
-      var attendanceTime = document.getElementById("attendanceTime");
-      
-      if (attendanceStatus.checked) {
-        attendanceTime.value = timeString;
-      } else {
-        attendanceTime.value = "";
+
+    <h1>出退勤登録</h1>
+    <div>
+      <button onclick="clockIn()">出勤</button>
+      <button onclick="clockOut()">退勤</button>
+    </div>
+    <div>
+      <button onclick="startBreak()">休憩開始</button>
+      <button onclick="endBreak()">休憩終了</button>
+    </div>
+    <div>
+      <h2>出勤状況:</h2>
+      <p id="status">未出勤</p>
+      <p id="clockInTime"></p>
+      <p id="clockOutTime"></p>
+      <p id="breakStartTime"></p>
+      <p id="breakEndTime"></p>
+    </div>
+  
+    <script>
+      var isClockedIn = false;
+      var isOnBreak = false;
+  
+      function clockIn() {
+        if (!isClockedIn) {
+          isClockedIn = true;
+          document.getElementById("status").textContent = "出勤中";
+          var currentTime = new Date().toLocaleString();
+          document.getElementById("clockInTime").textContent = "出勤時間: " + currentTime;
+        }
       }
-    }
-  </script>
-</head>
-<body>
-  <label>
-    <input type="checkbox" id="attendanceStatus">出勤
-  </label>
-  <br><br>
-  <label for="attendanceTime">登録時刻:</label>
-  <input type="text" id="attendanceTime" readonly>
-  <br><br>
-  <button onclick="registerAttendance()">登録</button>
-</body>
-</html>
+  
+      function clockOut() {
+        if (isClockedIn && !isOnBreak) {
+          isClockedIn = false;
+          document.getElementById("status").textContent = "退勤";
+          var currentTime = new Date().toLocaleString();
+          document.getElementById("clockOutTime").textContent = "退勤時間: " + currentTime;
+        }
+      }
+  
+      function startBreak() {
+        if (isClockedIn && !isOnBreak) {
+          isOnBreak = true;
+          document.getElementById("status").textContent = "休憩中";
+          var currentTime = new Date().toLocaleString();
+          document.getElementById("breakStartTime").textContent = "休憩開始時間: " + currentTime;
+        }
+      }
+  
+      function endBreak() {
+        if (isClockedIn && isOnBreak) {
+          isOnBreak = false;
+          document.getElementById("status").textContent = "出勤中";
+          var currentTime = new Date().toLocaleString();
+          document.getElementById("breakEndTime").textContent = "休憩終了時間: " + currentTime;
+        }
+      }
+    </script>
+  </body>
+  </html>
+  
