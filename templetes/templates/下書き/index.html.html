@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>出退勤登録</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script>
+    function registerAttendance() {
+      var currentTime = new Date();
+      var timeString = currentTime.toLocaleTimeString();
+      
+      var attendanceStatus = document.getElementById("attendanceStatus");
+      var attendanceTime = document.getElementById("attendanceTime");
+      
+      if (attendanceStatus.checked) {
+        attendanceTime.value = timeString;
+      } else {
+        attendanceTime.value = "";
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>出退勤登録</h1>
+    <div class="status-container">
+      <p id="status">未出勤</p>
+    </head>
+    <body>
+      <label>
+    </div> <label>
+    <input type="checkbox" id="attendanceStatus">出勤</button>
+    <div class="buttons-container">
+      <button onclick="clockIn()">
+      <button onclick="clockOut()">退勤</button>
+      <button onclick="startBreak()">休憩開始</button>
+      <button onclick="endBreak()">休憩終了</button>
+    </label>
+    <br><br>
+    <button onclick="registerAttendance()">登録</button>
+    </div>
+    <div class="times-container">
+      <p id="clockInTime"></p>
+      <p id="clockOutTime"></p>
+      <p id="breakStartTime"></p>
+      <p id="breakEndTime"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
