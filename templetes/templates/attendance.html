@@ -7,64 +7,88 @@
   <p>{{ username }}さん、おはようございます。</p>
   <!-- 勤怠入力フォームやその他のコンテンツを追加 -->
 
-    <h1>出退勤登録</h1>
-    <div>
-      <button onclick="clockIn()">出勤</button>
-      <button onclick="clockOut()">退勤</button>
-    </div>
-    <div>
-      <button onclick="startBreak()">休憩開始</button>
-      <button onclick="endBreak()">休憩終了</button>
-    </div>
-    <div>
-      <h2>出勤状況:</h2>
-      <p id="status">未出勤</p>
-      <p id="clockInTime"></p>
-      <p id="clockOutTime"></p>
-      <p id="breakStartTime"></p>
-      <p id="breakEndTime"></p>
-    </div>
-  
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <body>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+    <h1>勤怠登録</h1>
+    <button onclick="registerAttendance('出勤')">出勤</button>
+    <button onclick="registerAttendance('退勤')">退勤</button>
+    <button onclick="registerAttendance('休憩開始')">休憩開始</button>
+    <button onclick="registerAttendance('休憩終了')">休憩終了</button>
+
+
     <script>
-      var isClockedIn = false;
-      var isOnBreak = false;
+      var previousCommand = null;
   
-      function clockIn() {
-        if (!isClockedIn) {
-          isClockedIn = true;
-          document.getElementById("status").textContent = "出勤中";
-          var currentTime = new Date().toLocaleString();
-          document.getElementById("clockInTime").textContent = "出勤時間: " + currentTime;
+      function registerAttendance(command) {
+        if (previousCommand === command) {
+          alert("既に登録されています。");
+          return;
         }
-      }
   
-      function clockOut() {
-        if (isClockedIn && !isOnBreak) {
-          isClockedIn = false;
-          document.getElementById("status").textContent = "退勤";
-          var currentTime = new Date().toLocaleString();
-          document.getElementById("clockOutTime").textContent = "退勤時間: " + currentTime;
-        }
-      }
+        var currentTime = new Date().toLocaleString();
+        var message = command + "時間: " + currentTime;
   
-      function startBreak() {
-        if (isClockedIn && !isOnBreak) {
-          isOnBreak = true;
-          document.getElementById("status").textContent = "休憩中";
-          var currentTime = new Date().toLocaleString();
-          document.getElementById("breakStartTime").textContent = "休憩開始時間: " + currentTime;
-        }
-      }
+        alert(message);
   
-      function endBreak() {
-        if (isClockedIn && isOnBreak) {
-          isOnBreak = false;
-          document.getElementById("status").textContent = "出勤中";
-          var currentTime = new Date().toLocaleString();
-          document.getElementById("breakEndTime").textContent = "休憩終了時間: " + currentTime;
-        }
+        previousCommand = command;
       }
     </script>
   </body>
   </html>
+
+  <body>
+    <!-- メニューボタン -->
+    <h1></h1><button id="menuButton">メニュー</button></h1>
+    
+
+    <!-- ボタンをクリックしたときの処理 -->
+    <script>
+      document.getElementById("menuButton").addEventListener("click", function() {
+        // ページ内の特定のセクションへスクロールする
+        window.location.hash = "###"; // この場合＃＃＃に転移
+      });
+    </script>
+
+  </body>
+
+    <!-- ログアウトボタン -->
+    <body>
+    <h1><button id="logoutButton">ログアウト</button></h1>
   
+    <script>
+    document.getElementById("logoutButton").addEventListener("click", function() {
+    
+      window.location.href = "http://127.0.0.1:8888"; // ログイン画面のURLにリダイレクト
+    });
+    </script>
+
+  </body>
+  </html>
+
+  <style>
+    /* CSSスタイルを記述 */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: rgb(0, 0, 0);
+    }
+
+    p {
+      font-size: 16px;
+    }
+    body {
+    /* 背景画を指定 */
+    background-image: url('SINGLES.jpg');
+    
+    background-size: 75% auto;
+
+    background-position: top left;
+   
+    background-repeat: no-repeat;
+  </style>
