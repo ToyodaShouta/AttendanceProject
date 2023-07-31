@@ -1,0 +1,47 @@
+<style>
+    /* CSSスタイルを記述 */
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+    p {
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+    h1 {
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+    h2 {
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+    h3 {
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+
+     /* メニューバー */
+     nav {
+      background-color: #ffffff;
+      color: black;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    nav a {
+      display: flex;
+      padding: 10px 10px;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+  </style>

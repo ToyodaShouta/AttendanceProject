@@ -2,24 +2,25 @@
 <html>
 <head>
   <title>出退勤登録</title>
-</head>
+
+  <link href="styles.css" rel="stylesheet" type="text/css">
 <body>
   <p>{{ username }}さん、おはようございます。</p>
-  <!-- 勤怠入力フォームやその他のコンテンツを追加 -->
 
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <body>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-    <h1>勤怠登録</h1>
+    <h1>
+      勤怠登録
+    </h1>
+
+   <h2>
     <button onclick="registerAttendance('出勤')">出勤</button>
     <button onclick="registerAttendance('退勤')">退勤</button>
+  </h2>
+
+  <h3>
     <button onclick="registerAttendance('休憩開始')">休憩開始</button>
     <button onclick="registerAttendance('休憩終了')">休憩終了</button>
-
-
+  </h3>
+    
     <script>
       var previousCommand = null;
   
@@ -37,58 +38,27 @@
         previousCommand = command;
       }
     </script>
-  </body>
-  </html>
 
-  <body>
-  
-    <h1></h1><button id="menuButton">メニュー</button></h1>
-    
-    <script>
-      document.getElementById("menuButton").addEventListener("click", function() {
-  
-        window.location.hash = "###"; // この場合＃＃＃に転移
-      });
-    </script>
-
-  </body>
-
-  <body>
-    <!-- ログアウトボタン -->
-    <button id="logoutBtn">ログアウト</button>
-
-    <script>
-        // ログアウトボタンがクリックされたときの処理
-        document.getElementById('logoutBtn').addEventListener('click', function() {
-
-          sessionStorage.clear();
-            // ログイン画面に転移（再度ログインが必要となる）
-            window.location.href = 'login.html'; // ログイン画面のURLに適切なものを指定してください
-        });
-    </script>
-</body>
-</html>
+  <nav>
+    <a href="###">勤務実績</a>
+    <a href="owner.html">管理者メニュー</a>
+    <a href="login.html">ログアウト</a>
+  </nav>
 
   <style>
-    /* CSSスタイルを記述 */
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    h1 {
-      color: rgb(0, 0, 0);
-    }
-
-    p {
-      font-size: 16px;
-    }
     body {
     /* 背景画を指定 */
     background-image: url('SINGLES.jpg');
     
-    background-size: 75% auto;
+    background-size: 75% center;
 
     background-position: top left;
    
     background-repeat: no-repeat;
+    }
+   
+
   </style>
+</body>
+</head>
+</html>
