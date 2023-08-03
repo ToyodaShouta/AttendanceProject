@@ -2,9 +2,8 @@
 <html>
 <head>
   <title>シングルス - ログイン</title>
-</head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_mian.css') }}">
 <body>
-  <h1>シングルス - ログイン</h1>
     <p> 一人っ子娘政策課　管理部</p>
   <form method="POST" action="/">
     <label for="username">ユーザー名:</label>
@@ -13,5 +12,22 @@
     <input type="password" id="password" name="password" required><br><br>
     <input type="submit" value="ログイン">
   </form>
+
+  <style>
+    body {
+    /* 背景画を指定 */
+    background-image: url("{{ url_for('static', filename='SINGLES.jpg') }}");
+    
+    background-size: 75% center;
+
+    background-position: top left;
+   
+    background-repeat: no-repeat;
+    }
+   
+
+  </style>
+  
 </body>
+</head>
 </html>
