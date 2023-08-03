@@ -23,9 +23,5 @@ def login():
 def owner():
     return render_template('owner.html')
 
-@app.route('/login.html')
-def owner():
-    return render_template('login.html')
-
 if __name__ == '__main__':
     app.run(debug=True, port=8888, threaded=True)  
