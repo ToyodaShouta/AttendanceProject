@@ -14,6 +14,7 @@
   <button class="custom-button3" onclick="registerAttendance('休憩開始')">休憩開始</button>
   <button class="custom-button4" onclick="registerAttendance('休憩終了')">休憩終了</button>
 </h2>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
   <nav>
     <a href="###">勤務実績</a>
@@ -38,8 +39,6 @@
       previousCommand = command;
     }
   </script>
-
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
 
   <style>
     body {
