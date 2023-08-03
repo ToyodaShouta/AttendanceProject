@@ -3,8 +3,8 @@
 <head>
   <title>出退勤登録</title>
 
-  <link href="styles.css" rel="stylesheet" type="text/css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 <body>
   
 <h1>
@@ -43,7 +43,7 @@
   <style>
     body {
     /* 背景画を指定 */
-    background-image: url('SINGLES.jpg');
+    background-image: url("{{ url_for('static', filename='SINGLES.jpg') }}");
     
     background-size: 75% center;
 
@@ -55,7 +55,6 @@
 
   </style>
 
-  
 
 </body>
 </head>

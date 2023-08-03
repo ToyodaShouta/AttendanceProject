@@ -1,5 +1,4 @@
 <script>
-
 var previousCommand = null;
   
       function registerAttendance(command) {

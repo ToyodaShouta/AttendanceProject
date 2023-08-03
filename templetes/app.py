@@ -12,12 +12,20 @@ def login():
         
         # ログイン処理を行う（例: ユーザー名とパスワードのバリデーション）
         if username == 'admin' and password == 'password':
-            return render_template('attendance.html', username=username)
+            return render_template('attendance.html', username=username , )
         else:
             error_message = 'ユーザー名またはパスワードが正しくありません'
             return render_template('login.html', error=error_message)
     else:
         return render_template('login.html')
+    
+@app.route('/owner.html')
+def owner():
+    return render_template('owner.html')
+
+@app.route('/login.html')
+def owner():
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8888, threaded=True)  
