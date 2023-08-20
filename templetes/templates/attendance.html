@@ -14,43 +14,13 @@
   <button class="custom-button3" onclick="registerAttendance('休憩開始')">休憩開始</button>
   <button class="custom-button4" onclick="registerAttendance('休憩終了')">休憩終了</button>
 </h2>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
-      <button class="menu-button" onclick="toggleMenu('menu1')">メニュー一覧</button>
-      <div class="menu-content" id="menu1">
-        <a href="###">勤務実績</a>
-        <a href="owner.html">管理者メニュー</a>
-        <a href="/">ログアウト</a>
-      </div>
-
-
-      <script src="{{ url_for('static', filename='script.js') }}">
-        ///本来のスクリプト（作成中）
-      </script>
-
-
-  <script>
-    ///代理のスクリプト
-      var previousCommand = null;
-
-      function registerAttendance(command) {
-        if (previousCommand === command) {
-          alert("既に登録されています。");
-          return;
-        }
-  
-        var currentTime = new Date().toLocaleString();
-        var message = command + "時間: " + currentTime;
-  
-        alert(message);
-  
-        previousCommand = command;
-      }
-      
-      function toggleMenu(menuId) {
-          const menuContent = document.getElementById(menuId);
-          menuContent.classList.toggle('active');
-        }
-  </script>
+<div class="navbar">
+  <ul>
+    <li><a href="###">勤務実績</a></li>
+    <li><a href="/">ログアウト</a></li>
+  </div>
 
   <style>
     body {

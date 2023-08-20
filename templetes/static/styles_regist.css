@@ -52,41 +52,38 @@
       cursor: pointer;
 }
 
-.menu-button {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  width: 120px;
-  text-align: left;
-}
-
-/* メニューコンテンツのスタイル */
-.menu-content {
-  display: none;
-  background-color: #f1f1f1;
-  padding: 10px 10px;
-  width: 125px;
-  flex-direction: column; 
-}
-/* メニューコンテンツ表示時のスタイル */
-.menu-content.active {
-  display: flex;
-}
-/* メニューアイテムのスタイル */
-.menu-item {
-  margin: 10px 10px;
-}
-
 h1{
   text-align: center;
 }
 h2{
   text-align: center;
 }
+.navbar {
+  position: center;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  color: white;
+}
 
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  text-decoration: underline;
+}
 </style>
