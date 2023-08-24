@@ -64,4 +64,5 @@ button3.addEventListener("click", () => {
 button4.addEventListener("click", () => {
   checkButtonOrder(button4);
 });
+}
 </script>
