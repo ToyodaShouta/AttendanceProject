@@ -26,6 +26,8 @@ def login():
         # ログイン処理を行う（例: ユーザー名とパスワードのバリデーション）
         if username == 'admin' and password == 'password':
             return render_template('attendance.html', username=username , )
+        elif username == 'owners' and password == 'password':
+            return render_template('owner.html', username=username , )
         else:
             error_message = 'ユーザー名またはパスワードが正しくありません'
             return render_template('login.html', error=error_message)
