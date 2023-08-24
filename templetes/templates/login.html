@@ -11,6 +11,12 @@
     <label for="password">パスワード:</label>
     <input type="password" id="password" name="password" required><br><br>
     <input type="submit" value="ログイン">
+    <script>
+      if('{{error}}' != '' ){
+      var message = '{{error}}';
+      alert(message)
+    }
+    </script>
   </form>
 
   <style>
